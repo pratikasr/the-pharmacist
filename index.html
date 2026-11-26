@@ -170,6 +170,39 @@
     @media(max-width:650px){.app-peek{padding-bottom:76px}.peek-grid{grid-template-columns:1fr}.peek{padding:22px}.peek-viz{padding:0 22px}}
     @media(max-width:950px){.hero-layout{grid-template-columns:1fr;gap:0}.hero-layout .hero-content{padding-bottom:30px}.hero-device{padding:0 0 80px}}
     @media(prefers-reduced-motion:reduce){.done-check circle,.done-check path{stroke-dashoffset:0}.pay-row.is-picked{border-color:#0c837d;background:#f0faf8}}
+
+    /* Inside the app: four cards, scroll sideways */
+    .peek-head{display:flex;align-items:center;justify-content:space-between;gap:20px}
+    .peek-nav{display:flex;gap:8px}
+    .peek-nav button{width:44px;height:44px;border:1px solid var(--line);border-radius:3px;background:#fff;color:var(--teal-dark);font-size:1.1rem;cursor:pointer;transition:background .2s,color .2s,border-color .2s,opacity .2s}
+    .peek-nav button:hover:not(:disabled){background:var(--teal);border-color:var(--teal);color:#fff}
+    .peek-nav button:disabled{opacity:.35;cursor:default}
+    .peek-grid{grid-template-columns:none;grid-auto-flow:column;grid-auto-columns:calc((100% - 2px) / 2.35);overflow-x:auto;scroll-snap-type:x mandatory;overscroll-behavior-x:contain;scrollbar-width:thin;scrollbar-color:var(--teal) var(--mint);margin-top:22px}
+    .peek-grid::-webkit-scrollbar{height:6px}
+    .peek-grid::-webkit-scrollbar-track{background:var(--mint)}
+    .peek-grid::-webkit-scrollbar-thumb{background:var(--teal)}
+    .peek{scroll-snap-align:start}
+    .peek-viz{padding:0 30px}
+    .peek-credit strong{font-size:1.8rem}
+    .peek-meter-goal{position:relative}
+    .peek-meter-goal::after{content:"";position:absolute;right:-1px;top:-6px;width:20px;height:20px;border-radius:50%;background:var(--amber);box-shadow:0 0 0 4px var(--mint)}
+    .peek-meter-goal i{width:82%}
+    .peek-bill{gap:0;justify-content:center}
+    .peek-bill div{display:flex;justify-content:space-between;align-items:baseline;padding:11px 0;border-bottom:1px solid rgba(8,95,91,.18)}
+    .peek-bill div span{font-weight:500;color:#4f6560}
+    .peek-bill b{font:600 1.15rem var(--serif);color:var(--teal-deep)}
+    .peek-bill .peek-bill-total{border-bottom:0}
+    .peek-bill .peek-bill-total span{font-weight:700;color:var(--teal-dark)}
+    .peek-bill .peek-bill-total b{font-size:1.6rem;color:var(--teal)}
+    .reveal.visible .peek-bill div{animation:drop-in .55s var(--land) both}
+    .reveal.visible .peek-bill div:nth-child(2){animation-delay:.15s}
+    .reveal.visible .peek-bill div:nth-child(3){animation-delay:.3s}
+    @media(max-width:950px){.peek-grid{grid-auto-columns:62%}}
+    @media(max-width:650px){.peek-grid{grid-template-columns:none;grid-auto-columns:86%}.peek-nav button{width:40px;height:40px}}
+
+    /* Logo: rounded panel in Who we are; original logo in the footer */
+    .intro-mark{border-radius:22px}
+    .footer-brand img{margin-left:0;border-radius:10px}
   </style>
 </head>
 <body>
@@ -280,8 +313,14 @@
 
     <section class="app-peek" aria-label="Inside the app">
       <div class="container">
-        <span class="eyebrow reveal">Inside the app</span>
-        <div class="peek-grid">
+        <div class="peek-head reveal">
+          <span class="eyebrow">Inside the app</span>
+          <div class="peek-nav">
+            <button type="button" id="peekPrev" aria-label="Previous cards" disabled>←</button>
+            <button type="button" id="peekNext" aria-label="Next cards">→</button>
+          </div>
+        </div>
+        <div class="peek-grid" id="peekGrid" tabindex="0" aria-label="App features, scroll sideways for more">
           <article class="peek reveal">
             <div class="peek-viz peek-credit" aria-hidden="true"><strong>₹38,500 available</strong><div class="peek-meter"><i></i></div><span>of your ₹50,000 limit with Ganga Medico</span></div>
             <h3>Stock up now, pay later</h3>
@@ -291,6 +330,16 @@
             <div class="peek-viz peek-scheme" aria-hidden="true"><b>10</b><i>+</i><em>1</em><span>free strip added</span></div>
             <h3>Never miss a scheme</h3>
             <p>Free goods and scheme discounts are added to your cart automatically. Nothing to remember or ask for.</p>
+          </article>
+          <article class="peek reveal">
+            <div class="peek-viz peek-credit" aria-hidden="true"><strong>₹82,000 of ₹1,00,000</strong><div class="peek-meter peek-meter-goal"><i style="width:82%"></i></div><span>₹18,000 more to unlock your reward</span></div>
+            <h3>Milestone rewards</h3>
+            <p>Distributors set purchase milestones. Track your progress in the app and claim the reward when you get there.</p>
+          </article>
+          <article class="peek reveal">
+            <div class="peek-viz peek-bill" aria-hidden="true"><div><span>MRP</span><b>₹33.00</b></div><div><span>Trade price</span><b>₹21.40</b></div><div class="peek-bill-total"><span>Your margin</span><b>₹11.60</b></div></div>
+            <h3>Transparent pricing</h3>
+            <p>See the MRP, the trade price and your margin on a product before you order it. Every order comes with its invoice.</p>
           </article>
         </div>
         <p class="peek-note">Figures shown are illustrative.</p>
@@ -356,7 +405,7 @@
   <footer>
     <div class="container">
       <div class="footer-top">
-        <div class="footer-brand"><img src="assets/the-pharmacist-wordmark.png" alt="The Pharmacist logo"><p>Building a connected foundation for India's pharmaceutical trade.</p></div>
+        <div class="footer-brand"><img src="assets/the-pharmacist-logo.png" alt="The Pharmacist logo"><p>Building a connected foundation for India's pharmaceutical trade.</p></div>
         <div class="footer-links">
           <div class="footer-col"><strong>Explore</strong><a href="#who-we-are">Who We Are</a><a href="#vision">Vision & Mission</a><a href="#ecosystem">Our Ecosystem</a><a href="#why-us">Why We Exist</a></div>
           <div class="footer-col"><strong>Company</strong><a href="#partnership">Partnerships</a><a href="https://thepharmacist.co.in" target="_blank" rel="noopener">Website</a></div>
@@ -379,6 +428,18 @@
     const reduceMotion=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     const $=(sel,root)=>(root||document).querySelector(sel);
     const $$=(sel,root)=>Array.from((root||document).querySelectorAll(sel));
+
+    /* Inside the app: arrow buttons scroll the cards */
+    (function(){
+      const grid=$('#peekGrid'),prev=$('#peekPrev'),next=$('#peekNext');
+      const step=()=>{const card=$('.peek',grid);return card?card.getBoundingClientRect().width+1:300;};
+      const sync=()=>{prev.disabled=grid.scrollLeft<4;next.disabled=grid.scrollLeft+grid.clientWidth>grid.scrollWidth-4;};
+      prev.addEventListener('click',()=>grid.scrollBy({left:-step(),behavior:reduceMotion?'auto':'smooth'}));
+      next.addEventListener('click',()=>grid.scrollBy({left:step(),behavior:reduceMotion?'auto':'smooth'}));
+      grid.addEventListener('scroll',sync,{passive:true});
+      window.addEventListener('resize',sync);
+      sync();
+    })();
     (function demo() {
       var scenes = $$('.scene');
       var dots = $$('.scene-dots button');
