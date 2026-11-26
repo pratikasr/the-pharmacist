@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#043a37">
+  <meta name="description" content="The Pharmacist is a B2B app that connects retail pharmacies with licensed distributors: search medicines by brand or molecule, see trade prices, order, pay and track in one place.">
+  <meta property="og:title" content="The Pharmacist | Building the Future of Pharmaceutical Commerce">
+  <meta property="og:description" content="A connected B2B commerce network for India's pharmaceutical trade.">
+  <meta property="og:image" content="assets/the-pharmacist-logo.png">
+  <title>The Pharmacist | Building the Future of Pharmaceutical Commerce</title>
+  <link rel="icon" type="image/png" href="assets/favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;0,800;1,600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <script>document.documentElement.classList.add('js');</script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <div class="intro" aria-hidden="true"><img src="assets/wordmark-white.png" alt="" width="1317" height="480"></div>
+  <div class="progress" id="progress" aria-hidden="true"></div>
+
+  <header class="site-header" id="siteHeader">
+    <div class="nav">
+      <a class="brand" href="#home" aria-label="The Pharmacist home"><img src="assets/wordmark-white.png" alt="The Pharmacist" width="1317" height="480"></a>
+      <button class="menu-toggle" id="menuToggle" aria-label="Open navigation" aria-expanded="false" aria-controls="navLinks"><span></span><span></span></button>
+      <nav class="nav-links" id="navLinks" aria-label="Main navigation">
+        <a href="#app">The app</a>
+        <a href="#how-it-works">How it works</a>
+        <a href="#who-we-are">Who we are</a>
+        <a href="#vision">Vision</a>
+        <a href="#ecosystem">Ecosystem</a>
+        <a class="nav-cta" href="#get-the-app">Get the app</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero" id="home">
+      <div class="aurora" aria-hidden="true"><i></i><i></i><i></i></div>
+      <div class="hero-mesh" aria-hidden="true"></div>
+      <canvas class="pill-canvas" id="pillCanvas" aria-hidden="true"></canvas>
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <p class="hero-badge"><i></i>The B2B marketplace for India's pharmaceutical trade</p>
+          <h1 id="heroTitle">Building the future of pharmaceutical commerce.</h1>
+          <p class="hero-lead">Connecting the businesses behind every pharmacy through a more organised, transparent and accessible pharmaceutical trade network.</p>
+          <div class="hero-actions">
+            <a class="btn btn-light" href="#get-the-app"><span>Get the app</span></a>
+            <a class="btn btn-ghost" href="#app"><span>See what it does</span></a>
+          </div>
+          <p class="hero-hint" id="heroHint">Pick up a capsule and throw it. Click anywhere to drop more.</p>
+        </div>
+
+        <div class="hero-device">
+          <div class="stage" id="stage">
+            <div class="halo" aria-hidden="true"></div>
+            <div class="chip chip-a" aria-hidden="true" style="--d:1.6"><b class="chip-ic chip-ic-amber">+1</b><span><strong>Scheme applied</strong>10 + 1 free</span></div>
+            <div class="chip chip-b" aria-hidden="true" style="--d:-1.2"><b class="chip-ic"><svg viewBox="0 0 24 24"><path d="m5 12.5 4.5 4.500L19 7.5" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg></b><span><strong>Order placed</strong>Ganga Medico</span></div>
+            <div class="chip chip-c" aria-hidden="true" style="--d:2.2"><b class="chip-ic">₹</b><span><strong>₹38,500</strong>credit available</span></div>
+            <div class="phone-tilt" id="phoneTilt">
+            <div class="phone" id="demoPhone" aria-label="Sample app screens showing how a pharmacy places an order">
+              <div class="phone-screen">
+                <!-- Scene 1: search results -->
+                <div class="scene is-active" data-scene="0">
+                  <div class="app-bar"><span>Find medicines</span>
+                    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h2l2.2 10h9.3L20 8H7.4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><circle cx="9.5" cy="19" r="1.4" fill="currentColor"/><circle cx="17" cy="19" r="1.4" fill="currentColor"/></svg>
+                  </div>
+                  <div class="app-body">
+                    <div class="search-field"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="6.5" fill="none" stroke="currentColor" stroke-width="2"/><path d="m16 16 4.5 4.5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg><span id="typed">paracetamol 650</span><i class="caret"></i></div>
+                    <p class="app-label">3 results, best price first</p>
+                    <div class="offer is-best"><div><strong>Paracetamol 650 mg</strong><span>Strip of 15, sold by Ganga Medico</span><em>10 + 1 free</em></div><div class="offer-price"><strong>₹21.40</strong><span>per strip</span></div></div>
+                    <div class="offer"><div><strong>Paracetamol 650 mg</strong><span>Strip of 15, sold by Shree Pharma</span></div><div class="offer-price"><strong>₹22.10</strong><span>per strip</span></div></div>
+                    <div class="offer"><div><strong>Paracetamol 650 mg</strong><span>Strip of 15, sold by Patliputra Agencies</span><em>20 + 2 free</em></div><div class="offer-price"><strong>₹22.75</strong><span>per strip</span></div></div>
+                  </div>
+                </div>
+                <!-- Scene 2: add to cart -->
+                <div class="scene" data-scene="1">
+                  <div class="app-bar"><span>Ganga Medico</span>
+                    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h2l2.2 10h9.3L20 8H7.4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><circle cx="9.5" cy="19" r="1.4" fill="currentColor"/><circle cx="17" cy="19" r="1.4" fill="currentColor"/></svg>
+                    <b class="cart-count">1</b>
+                  </div>
+                  <div class="app-body">
+                    <div class="product-card">
+                      <div class="product-thumb" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i></div>
+                      <strong>Paracetamol 650 mg</strong>
+                      <span>Strip of 15 tablets</span>
+                      <div class="stepper"><span>Strips</span><div><b>−</b><output id="qty">10</output><b>+</b></div></div>
+                    </div>
+                    <div class="scheme-note"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>Scheme applied: 1 strip free</div>
+                  </div>
+                  <div class="cart-bar"><div><strong>₹214.00</strong><span>10 strips + 1 free</span></div><b>View cart</b></div>
+                </div>
+                <!-- Scene 3: payment -->
+                <div class="scene" data-scene="2">
+                  <div class="app-bar"><span>Checkout</span></div>
+                  <div class="app-body">
+                    <p class="app-label">How would you like to pay?</p>
+                    <div class="pay-row"><i></i><div><strong>Cash on delivery</strong><span>Pay when the order arrives</span></div></div>
+                    <div class="pay-row"><i></i><div><strong>UPI</strong><span>Pay now from any UPI app</span></div></div>
+                    <div class="pay-row"><i></i><div><strong>Bank transfer</strong><span>NEFT, RTGS or IMPS</span></div></div>
+                    <div class="pay-row is-picked"><i></i><div><strong>Buy on credit</strong><span>₹38,500 available</span></div></div>
+                    <div class="total-row"><span>Order total</span><strong>₹214.00</strong></div>
+                  </div>
+                  <div class="place-btn">Place order</div>
+                </div>
+                <!-- Scene 4: order placed -->
+                <div class="scene scene-done" data-scene="3">
+                  <svg class="done-check" viewBox="0 0 64 64" aria-hidden="true"><circle cx="32" cy="32" r="29"/><path d="m20 33 8.5 8.5L45 24"/></svg>
+                  <strong>Order placed</strong>
+                  <span>Ganga Medico has your order.<br>Follow it from Orders.</span>
+                  <ol class="track"><li class="on">Placed</li><li>Accepted</li><li>Shipped</li><li>Delivered</li></ol>
+                </div>
+              </div>
+            </div>
+          </div>
+          </div>
+          <div class="scene-dots" role="group" aria-label="Choose a sample screen">
+            <button type="button" class="is-active" data-go="0">Search</button>
+            <button type="button" data-go="1">Add</button>
+            <button type="button" data-go="2">Pay</button>
+            <button type="button" data-go="3">Track</button>
+          </div>
+          <p class="device-note">Sample screens with illustrative data.</p>
+        </div>
+      </div>
+    </section>
+
+    <div class="tickers" aria-hidden="true">
+      <div class="ticker ticker-back"><div class="ticker-track" data-ticker>Organise <i></i> Connect <i></i> Simplify <i></i> Open access <i></i> Grow together <i></i> Build with trust <i></i></div></div>
+      <div class="ticker ticker-front"><div class="ticker-track" data-ticker>Search by brand or molecule <i></i> Best price first <i></i> Schemes applied automatically <i></i> Cash on delivery, UPI, bank transfer or credit <i></i> GST invoices <i></i> Order tracking <i></i> Milestone rewards <i></i></div></div>
+    </div>
+
+    <section class="section app-section" id="app">
+      <div class="container">
+        <div class="app-head">
+          <div class="section-heading drop">
+            <h2>One app for both sides of the counter.</h2>
+            <p>Pharmacies buy. Distributors sell. The Pharmacist keeps the order, the payment and the paperwork in one place.</p>
+          </div>
+          <div class="role-switch drop" role="tablist" aria-label="Choose who you are">
+            <button type="button" role="tab" id="tab-pharmacy" aria-selected="true" aria-controls="panel-pharmacy" class="is-active">I run a pharmacy</button>
+            <button type="button" role="tab" id="tab-distributor" aria-selected="false" aria-controls="panel-distributor" tabindex="-1">I am a distributor</button>
+            <span class="role-thumb" aria-hidden="true"></span>
+          </div>
+        </div>
+
+        <div class="role-panel is-active" id="panel-pharmacy" role="tabpanel" aria-labelledby="tab-pharmacy">
+          <div class="bento">
+            <article class="card card-dark span-7">
+              <div class="viz viz-search" aria-hidden="true">
+                <div class="search-field"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="6.5" fill="none" stroke="currentColor" stroke-width="2"/><path d="m16 16 4.5 4.5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg><span>paracetamol 650</span><i class="caret"></i></div>
+                <div class="mini-row"><span>Paracetamol 650 mg <small>Ganga Medico</small></span><b>₹21.40</b></div>
+                <div class="mini-row"><span>Paracetamol 650 mg <small>Shree Pharma</small></span><b>₹22.10</b></div>
+                <div class="mini-row"><span>Paracetamol 650 mg <small>Patliputra Agencies</small></span><b>₹22.75</b></div>
+              </div>
+              <h3>Find any medicine, with its trade price</h3><p>Search by brand or molecule. You only see distributors that deliver to your pincode, and you can sort the results by best price.</p>
+            </article>
+            <article class="card span-5">
+              <div class="viz viz-credit" aria-hidden="true"><strong>₹38,500 available</strong><div class="meter"><i style="--w:77%"></i></div><span>of your ₹50,000 limit with Ganga Medico</span></div>
+              <h3>Stock up now, pay later</h3><p>A distributor can give you a credit line. See your limit and what is due, and repay from the app.</p>
+            </article>
+            <article class="card span-4">
+              <div class="viz viz-scheme" aria-hidden="true"><span class="big-num">10</span><span class="plus">+</span><span class="free-pill">1</span><em>free strip added</em></div>
+              <h3>Never miss a scheme</h3><p>Free goods and scheme discounts are added to your cart automatically. Nothing to remember or ask for.</p>
+            </article>
+            <article class="card span-4">
+              <div class="viz viz-pay" aria-hidden="true"><span>Cash on delivery</span><span>UPI</span><span>Bank transfer</span><span>Credit</span></div>
+              <h3>Pay the way you already do</h3><p>Cash on delivery, UPI, bank transfer or credit. Choose at checkout, order by order.</p>
+            </article>
+            <article class="card span-4">
+              <div class="viz viz-photo" aria-hidden="true"><div class="paper"><i></i><i></i><i></i><i></i><i></i><b></b></div></div>
+              <h3>Order from a photo</h3><p>Short on time? Upload a photo of your order list. Our team reviews it and places the order for you.</p>
+            </article>
+            <article class="card card-dark span-12 card-wide">
+              <div><h3>No more chasing by phone</h3><p>Track every order, download its invoice, raise a return or a support ticket, and watch your milestone rewards build, all in one place.</p></div>
+              <div class="viz viz-track" aria-hidden="true"><ol><li>Placed</li><li>Accepted</li><li>Shipped</li><li>Delivered</li></ol></div>
+            </article>
+          </div>
+        </div>
+
+        <div class="role-panel" id="panel-distributor" role="tabpanel" aria-labelledby="tab-distributor" hidden>
+          <div class="bento">
+            <article class="card card-dark span-7">
+              <div class="viz viz-queue">
+                <div class="tiles" aria-hidden="true"><div><strong id="newOrders">12</strong><span>New orders</span></div><div><strong>₹86,400</strong><span>Sales today</span></div></div>
+                <div class="incoming"><div><strong>City Medical Hall</strong><span>11 items, ₹4,820, on credit</span></div><button type="button" id="acceptBtn">Accept order</button></div>
+              </div>
+              <h3>Every order in one queue</h3><p>Orders arrive on your phone instead of over calls. Accept, pack and ship, with an invoice generated for each one. Go on, accept that one.</p>
+            </article>
+            <article class="card span-5">
+              <div class="viz viz-batch" aria-hidden="true">
+                <div class="mini-row"><span>Batch A2291, exp 08/2027</span><em class="st st-ok">In stock</em></div>
+                <div class="mini-row"><span>Batch A1870, exp 01/2027</span><em class="st st-go">Expiring</em></div>
+                <div class="mini-row is-off"><span>Batch A1502, expired</span><em class="st">Hidden</em></div>
+              </div>
+              <h3>Batch and expiry control</h3><p>Stock is tracked by batch and expiry date, so an expired batch is never offered to a buyer.</p>
+            </article>
+            <article class="card span-4">
+              <div class="viz viz-scheme viz-price" aria-hidden="true"><span class="big-num">₹21.40</span><em>trade price, 10 + 1 scheme on</em></div>
+              <h3>Your prices, your schemes</h3><p>Set trade prices, free-goods schemes and milestone rewards for retailers.</p>
+            </article>
+            <article class="card span-4">
+              <div class="viz viz-credit" aria-hidden="true"><strong>₹11,500 due</strong><div class="meter"><i style="--w:23%"></i></div><span>of ₹50,000 limit for City Medical Hall</span></div>
+              <h3>Credit you control</h3><p>Set a credit limit and due period for each retailer, and see what is due and overdue.</p>
+            </article>
+            <article class="card span-4">
+              <div class="viz viz-csv" aria-hidden="true"><div class="grid-sheet"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div></div>
+              <h3>Reach more pharmacies</h3><p>Put your catalogue in front of every verified pharmacy in the pincodes you serve. Add products one by one or upload a spreadsheet.</p>
+            </article>
+            <article class="card card-dark span-12 card-wide">
+              <div><h3>Know your business</h3><p>Follow sales, settlements, your top products and your top retailers without building a single report.</p></div>
+              <div class="viz viz-chart" aria-hidden="true"><i style="--h:42%"></i><i style="--h:58%"></i><i style="--h:50%"></i><i style="--h:72%"></i><i style="--h:64%"></i><i style="--h:88%"></i><i style="--h:100%"></i></div>
+            </article>
+          </div>
+        </div>
+
+        <div class="facts">
+          <div class="fact drop"><strong data-count="1">1</strong><span>app for the whole order, from search to invoice</span></div>
+          <div class="fact drop"><strong data-count="2">2</strong><span>sides of the counter: pharmacies and distributors</span></div>
+          <div class="fact drop"><strong data-count="4">4</strong><span>ways to pay: cash on delivery, UPI, bank transfer or credit</span></div>
+          <div class="fact drop"><strong data-count="100" data-suffix="%">100%</strong><span>of pharmacies KYC-verified before they can order</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section how sheet" id="how-it-works">
+      <div class="how-glow" aria-hidden="true"></div>
+      <div class="container how-grid">
+        <div class="how-heading">
+          <div class="section-heading drop">
+            <h2>From sign-in to stocked shelf.</h2>
+            <p>Five steps take a pharmacy from its first login to a delivered order. Scroll and follow the capsule down.</p>
+          </div>
+          <div class="ghost-num" id="ghostNum" aria-hidden="true">1</div>
+        </div>
+        <ol class="steps" id="steps">
+          <li class="rail" aria-hidden="true"><span class="rail-fill"></span><span class="rail-pill"></span></li>
+          <li class="step"><span class="step-no">1</span><h3>Sign in with your mobile number</h3><p>A one-time password gets you in. There is nothing to install beyond the app.</p></li>
+          <li class="step"><span class="step-no">2</span><h3>Complete KYC once</h3><p>Upload your drug licence and GST details. Your pharmacy is verified before you can order.</p></li>
+          <li class="step"><span class="step-no">3</span><h3>Search and choose</h3><p>Look up a brand or a molecule. Results show the trade price from each distributor that serves your area, best price first.</p></li>
+          <li class="step"><span class="step-no">4</span><h3>Place the order</h3><p>Schemes and free goods are applied automatically. Pay by cash on delivery, UPI, bank transfer or credit.</p></li>
+          <li class="step"><span class="step-no">5</span><h3>Track it to your counter</h3><p>Follow each order from accepted to delivered, with the invoice ready when it lands.</p></li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="section intro-section sheet" id="who-we-are">
+      <div class="container intro-grid">
+        <div class="intro-mark drop" data-tilt><span></span><span></span><img src="assets/wordmark-white.png" alt="The Pharmacist" width="1317" height="480"></div>
+        <div class="intro-copy">
+          <h2 class="drop">We work behind the counter, where pharmaceutical trade moves.</h2>
+          <p class="lead" data-reveal-words>The Pharmacist is a pharmaceutical commerce company building a connected B2B marketplace for India's pharmaceutical trade.</p>
+          <p class="drop">We bring distributors, wholesalers and retail pharmacies onto a shared digital network designed to make product discovery and procurement more organised, transparent and convenient.</p>
+          <p class="drop">Our role is not to replace the people who built this industry. It is to equip them with better tools, stronger connections and greater opportunities to grow.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section vision" id="vision">
+      <div class="container">
+        <div class="section-heading drop">
+          <h2>A stronger network.<br>A more connected industry.</h2>
+          <p>Our vision defines the future we want to help create. Our mission defines the work we do to move towards it.</p>
+        </div>
+        <div class="vision-grid">
+          <article class="vision-card vision-dark drop" data-glow>
+            <p class="card-kicker">Our vision</p>
+            <h3>Transforming the foundations of pharmaceutical commerce.</h3>
+            <p>To help shape an India where pharmaceutical trade is connected, organised and accessible, where every participant can operate with greater visibility, opportunity and trust, regardless of geography or business size.</p>
+            <p class="vision-statement">One industry. One connected network. A new era of pharmaceutical commerce.</p>
+          </article>
+          <article class="vision-card drop" data-glow>
+            <p class="card-kicker">Our mission</p>
+            <h3>Organise. Connect. Simplify.</h3>
+            <p>To bring structure and convenience to pharmaceutical trade through technology, meaningful partnerships and operational excellence.</p>
+            <p>We connect businesses, simplify procurement, improve access to product information and create clearer processes across the trade, while building with accountability and respect for the regulations that govern the industry.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section pillars" id="value">
+      <div class="container">
+        <div class="section-heading drop">
+          <h2>Progress for the entire trade.</h2>
+          <p>We focus on practical improvements that strengthen the businesses and relationships at the heart of pharmaceutical commerce.</p>
+        </div>
+        <div class="pillar-grid">
+          <article class="pillar drop" data-glow><span class="pillar-ic" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 6h16M4 12h10M4 18h13"/></svg></span><h3>Organise</h3><p>Bring greater structure to product discovery, participant onboarding and everyday transactions.</p></article>
+          <article class="pillar drop" data-glow><span class="pillar-ic" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="6" cy="12" r="2.5"/><circle cx="18" cy="6" r="2.5"/><circle cx="18" cy="18" r="2.5"/><path d="m8.2 11 7.6-3.900M8.2 13l7.6 3.9"/></svg></span><h3>Connect</h3><p>Bring distributors, wholesalers and pharmacies closer through a shared commerce network.</p></article>
+          <article class="pillar drop" data-glow><span class="pillar-ic" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="m5 12.5 4.5 4.500L19 7.5"/></svg></span><h3>Simplify</h3><p>Make procurement easier with clearer information, streamlined ordering and fewer manual steps.</p></article>
+          <article class="pillar drop" data-glow><span class="pillar-ic" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5"/><path d="M3.5 12h17M12 3.500c2.6 2.4 2.6 14.6 0 17M12 3.500c-2.6 2.4-2.6 14.6 0 17"/></svg></span><h3>Open access</h3><p>Help businesses discover wider opportunities beyond the limits of their immediate networks.</p></article>
+          <article class="pillar drop" data-glow><span class="pillar-ic" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 19V11M10 19V5M16 19v-6M21 19H3"/></svg></span><h3>Grow together</h3><p>Build a model where the network creates value for the independent businesses that participate.</p></article>
+          <article class="pillar drop" data-glow><span class="pillar-ic" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 3.5 5 6.300v5.200c0 4.3 2.9 7.7 7 9 4.1-1.3 7-4.7 7-9V6.300l-7-2.800Z"/><path d="m9 12 2.2 2.200L15.2 10"/></svg></span><h3>Build with trust</h3><p>Put transparency, accountability and responsible pharmaceutical trade at the centre of our work.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section ecosystem sheet" id="ecosystem">
+      <div class="how-glow" aria-hidden="true"></div>
+      <div class="container">
+        <div class="section-heading drop">
+          <h2>Connecting the links that keep the trade moving.</h2>
+          <p>Pharmaceutical commerce depends on a chain of businesses working together. We are building a digital network that helps those connections work better.</p>
+        </div>
+        <svg class="flow" viewBox="0 0 1200 170" aria-hidden="true" preserveAspectRatio="xMidYMid meet">
+          <defs>
+            <linearGradient id="flowGrad" x1="0" x2="1"><stop offset="0" stop-color="#7fe9d6"/><stop offset="1" stop-color="#f4c95d"/></linearGradient>
+            <radialGradient id="nodeGlow"><stop offset="0" stop-color="#7fe9d6" stop-opacity=".55"/><stop offset="1" stop-color="#7fe9d6" stop-opacity="0"/></radialGradient><radialGradient id="nodeGlowAmber"><stop offset="0" stop-color="#f4c95d" stop-opacity=".55"/><stop offset="1" stop-color="#f4c95d" stop-opacity="0"/></radialGradient>
+          </defs>
+          <path id="flowPath" pathLength="1" d="M150 85 C 250 5, 350 165, 450 85 S 650 5, 750 85 S 950 165, 1050 85" fill="none" stroke-width="3" stroke-linecap="round"/>
+          <path class="flow-dash" d="M150 85 C 250 5, 350 165, 450 85 S 650 5, 750 85 S 950 165, 1050 85" fill="none" stroke="url(#flowGrad)" stroke-width="2.5" stroke-linecap="round" stroke-dasharray="4 18"/>
+          <g class="flow-caps">
+            <g><rect x="-15" y="-7" width="30" height="14" rx="7" fill="#fff"/><rect x="0" y="-7" width="15" height="14" rx="0" fill="#f4c95d"/><rect x="-15" y="-7" width="30" height="14" rx="7" fill="none" stroke="#032b29" stroke-opacity=".25"/><animateMotion dur="9s" repeatCount="indefinite" rotate="auto"><mpath href="#flowPath"/></animateMotion></g>
+            <g><rect x="-15" y="-7" width="30" height="14" rx="7" fill="#7fe9d6"/><rect x="0" y="-7" width="15" height="14" fill="#fff"/><animateMotion dur="9s" begin="-3s" repeatCount="indefinite" rotate="auto"><mpath href="#flowPath"/></animateMotion></g>
+            <g><circle r="9" fill="#fff"/><path d="M-5 0h10" stroke="#087f78" stroke-width="1.5"/><animateMotion dur="9s" begin="-6s" repeatCount="indefinite" rotate="auto"><mpath href="#flowPath"/></animateMotion></g>
+          </g>
+          <g class="flow-nodes">
+            <g transform="translate(150 85)"><circle r="44" fill="url(#nodeGlow)"/><circle r="15" fill="#043a37" stroke="#7fe9d6" stroke-width="2.5"/><circle r="5" fill="#7fe9d6"/></g>
+            <g transform="translate(450 85)"><circle r="44" fill="url(#nodeGlow)"/><circle r="15" fill="#043a37" stroke="#7fe9d6" stroke-width="2.5"/><circle r="5" fill="#7fe9d6"/></g>
+            <g transform="translate(750 85)"><circle r="44" fill="url(#nodeGlow)"/><circle r="15" fill="#043a37" stroke="#7fe9d6" stroke-width="2.5"/><circle r="5" fill="#7fe9d6"/></g>
+            <g transform="translate(1050 85)"><circle r="44" fill="url(#nodeGlowAmber)"/><circle r="15" fill="#043a37" stroke="#f4c95d" stroke-width="2.5"/><circle r="5" fill="#f4c95d"/></g>
+          </g>
+        </svg>
+        <div class="chain">
+          <article class="chain-item drop" data-glow><p class="chain-role">Supply</p><h3>Manufacturers</h3><p>The source of products and pharmaceutical innovation.</p></article>
+          <article class="chain-item drop" data-glow><p class="chain-role">Distribution</p><h3>Distributors</h3><p>Regional reach, market knowledge and supply relationships.</p></article>
+          <article class="chain-item drop" data-glow><p class="chain-role">Wholesale</p><h3>Wholesalers</h3><p>Local availability and connections across the trade.</p></article>
+          <article class="chain-item drop" data-glow><p class="chain-role">Retail</p><h3>Retail pharmacies</h3><p>Independent businesses serving communities every day.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section why sheet" id="why-us">
+      <div class="container why-grid">
+        <p class="why-quote" data-reveal-words>An industry that powers millions deserves infrastructure built for its future.</p>
+        <div class="why-copy">
+          <p class="drop">India's pharmaceutical trade has been built through relationships, trust and the extraordinary effort of distributors, wholesalers and pharmacists. Yet many everyday processes still rely on calls, informal messages, manual coordination and limited visibility.</p>
+          <p class="drop">That fragmentation costs businesses time, limits discovery and makes it harder to coordinate supply and demand. We believe the people who sustain this essential industry deserve systems that match the scale of their contribution.</p>
+          <p class="drop">The Pharmacist exists to bridge those gaps: to replace fragmentation with connection, complexity with simplicity and limited access with greater opportunity.</p>
+          <p class="drop"><strong>Our purpose is simple: give the people who built this industry the infrastructure to take it further.</strong></p>
+        </div>
+      </div>
+    </section>
+
+    <section class="closing" id="get-the-app">
+      <div class="container">
+        <div class="cta-panel drop">
+          <div class="aurora" aria-hidden="true"><i></i><i></i><i></i></div>
+          <div class="cta-pills" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></div>
+          <div class="cta-copy">
+            <h2>The next chapter of pharmaceutical commerce will be built together.</h2>
+            <p>We welcome conversations with distributors, wholesalers, pharmacies and industry partners who share our belief in a more connected trade.</p>
+          </div>
+          <div class="closing-actions">
+            <a class="store-btn" data-store="playStore" aria-disabled="true">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3.600v16.800a1 1 0 0 0 1.5.860l14-8.400a1 1 0 0 0 0-1.720l-14-8.400A1 1 0 0 0 6 3.600Z" fill="currentColor"/></svg>
+              <span><small>Coming soon to</small>Google Play</span>
+            </a>
+            <a class="store-btn" data-store="appStore" aria-disabled="true">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="6.5" y="2.5" width="11" height="19" rx="2.6" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M10.5 18.200h3" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+              <span><small>Coming soon to the</small>App Store</span>
+            </a>
+            <a class="btn btn-ghost" id="contactBtn" hidden><span>Talk to us about partnering</span></a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand"><img src="assets/wordmark-white.png" alt="The Pharmacist" width="1317" height="480"><p>Building a connected foundation for India's pharmaceutical trade.</p></div>
+        <div class="footer-links">
+          <div class="footer-col"><strong>The app</strong><a href="#app">For pharmacies and distributors</a><a href="#how-it-works">How it works</a><a href="#get-the-app">Get the app</a></div>
+          <div class="footer-col"><strong>Company</strong><a href="#who-we-are">Who we are</a><a href="#vision">Vision &amp; mission</a><a href="#ecosystem">Our ecosystem</a><a href="#why-us">Why we exist</a></div>
+        </div>
+      </div>
+      <div class="footer-bottom"><span>© <span id="year"></span> The Pharmacist. All rights reserved.</span><span>A venture of RxChain Pharmacist Pvt. Ltd. <a href="#home">Back to top</a></span></div>
+    </div>
+    <div class="footer-word" aria-hidden="true">The Pharmacist</div>
+  </footer>
+
+  <script src="assets/matter.min.js"></script>
+  <script src="main.js"></script>
+</body>
+</html>
